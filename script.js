@@ -34,7 +34,7 @@ function calcAge1(birthYear) {
 }
 
 
-//function expression       
+//function expression
 const calcAge2 = function (birthYear) { //Aninymus function
     return 2025 - birthYear;
 }
@@ -59,5 +59,69 @@ const yearsUntilRetirment = (birthYear, firstName) => {
 
 console.log(yearsUntilRetirment(1994, "Anastasios"));
 console.log(yearsUntilRetirment(1973, "Afroditi"));
+
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    //console.log(apples, oranges);
+    const juice = `Juice with ${applePieces} pieces of apple 🍎 & ${orangePieces} pieces of orange 🍊.`;
+    return juice;
+}
+console.log(fruitProcessor(2, 3));
+
+const calcAge = function (birthYear) {
+    return 2024 - birthYear;
+}
+
+const yearsUntilRetirment = function (birthYear, firstName) {
+    //const age = 2024 - birthYear;
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired! 🙌🙌🙌`)
+        return -1;
+    }
+
+    return retirement;
+    //return `${firstName} retires in ${retirement} years`;
+}
+
+console.log(yearsUntilRetirment(1991, "Anastasios"));
+console.log(yearsUntilRetirment(1940, "Katerina"));
+
+//      -- Coding Challenge #1
+
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+console.log(calcAverage(3, 4, 5));
+
+//Test1
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
+
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins}) vs. the Koalas (${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas}) vs. the Dolphins (${avgDolphins})`);
+    } else {
+        console.log("None has won yet.")
+    }
+}
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+checkWinner(100, 50);
 */
 
