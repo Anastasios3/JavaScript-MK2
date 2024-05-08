@@ -243,7 +243,7 @@ console.log(anastasios);
 
 console.log(`${anastasios.firstName} has ${anastasios.friends.length} friends, and his best friend is called ${anastasios.friends[0]}.`);
 */
-
+/*
 const anastasios3 = {
     firstName: "Anastasios",
     middleName: "Tatarakis",
@@ -252,15 +252,15 @@ const anastasios3 = {
     occupation: "Front-End Developer",
     friends: ["Georgia", "George", "Antonis", "Stavros"],
     hasDriversLicense: false,
-    /*
+
         calcAge: function (birthYear) {
             return 2024 - birthYear;
-        } */
-    /*
+        }
+
     calcAge: function () {
         //console.log(this);
         return 2024 - this.birthYear;   // this helps you call an information from inside the array in order to make a funktion work
-    } */
+    }
     calcAge: function () {
         this.age = 2024 - this.birthYear;
         return 2024 - this.birthYear;
@@ -269,11 +269,12 @@ const anastasios3 = {
         return `${this.firstName} is a ${this.calcAge()}-year old ${anastasios3.occupation}, and has ${this.hasDriversLicense ? "a" : "no"} driver's license.`
     }
 };
+*/
 /*
 const calcAge = function (birthYear) {
     return 2024 - birthYear;
 };
-*/
+*//*
 console.log(anastasios3.calcAge());
 console.log(anastasios3.calcAge());
 console.log(anastasios3.calcAge());
@@ -288,5 +289,112 @@ function describePerson(person) {
 }
 
 console.log(describePerson(anastasios3));
-*/
 console.log(anastasios3.getSummary())
+*/
+/*
+const mark = {
+    fullName: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+const john = {
+    fullName: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+mark.calcBMI();
+console.log(mark.bmi);
+
+john.calcBMI();
+console.log(john.bmi);
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI(${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`)
+} else if (john.bmi > mark.bmi) {
+    console.log(`${john.fullName}'s BMI (${john.bmi} is higher than ${mark.fullName}'s BMI (${mark.bmi}) )`)
+} else {
+    console.log("Unbelievable! They have the exact same BMI 😲😲😲")
+}
+*/
+
+//for (let rep = 1; rep < 1100; /* OR rep <= 10 */rep++) {
+//    console.log(`Lifting weights repetition ${rep} 💪💪💪`)
+//}
+/*
+const anastasiosArray = [
+    "Anastasios",
+    "Tatarakis",
+    "Larentzos",
+    2024 - 1994,
+    ["Georgia", "George", "Antonis", "Stavros"],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i < anastasiosArray.length; i++) { //------------------------------------>>>>>>>>>>> length!!
+    // Reading from array
+    console.log(anastasiosArray[i], ", ", typeof anastasiosArray[i])
+
+    //types[i] = typeof anastasiosArray[i];
+    types.push(typeof anastasiosArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+console.log('--- ONLY STRINGS ---')
+for (let i = 0; i < years.length; i++) {
+    ages.push(2024 - years[i]);
+}
+console.log(ages);
+
+console.log('--- BREAK WITH NUMBER ---')
+for (let i = 0; i < anastasiosArray.length; i++) {
+    if (typeof anastasiosArray[i] !== "string") continue;
+    console.log(anastasiosArray[i], typeof anastasiosArray[i]);
+}
+
+console.log(anastasiosArray);
+console.log(ages);
+*/
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
+}
+
+console.log(bills, tips, totals);
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+
+console.log(calcAverage([2, 3, 7]));
+console.log(calcAverage([totals]));
+console.log(calcAverage([tips]));
+
