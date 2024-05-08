@@ -123,7 +123,7 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 checkWinner(scoreDolphins, scoreKoalas);
 
 checkWinner(100, 50);
-*/
+
 
 const friends = ['Anastasios', 'Georgia', 'Antonis'];
 console.log(friends);
@@ -150,3 +150,143 @@ const calcAge = function (birthYear) {
 const year = [1990, 1991, 1992, 1993, 1994];
 
 console.log(calcAge(year));
+
+
+const friends = ['Anastasios', 'Georgia', 'Antonis'];
+const newLength = friends.push('George'); //  push ==> it is basically a function that it can push arguments into functions.
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John'); // puts it in the front
+console.log(friends);
+
+friends.pop(); // removes the last elemnt of the array
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // first only
+console.log(friends);
+
+console.log(friends.indexOf('Anastasios')); // tells us where that is ...
+console.log(friends.indexOf('George')); // you get a -1 if it doesnt exist
+
+console.log(friends.includes('Anastasios')); // strict true or false equality ... does it exist? yer / no
+console.log(friends.includes('George'));
+
+if (friends.includes("Georgia")) {
+    console.log("You have a friend called Georgia / or a girlfriend 👧👧");
+}
+
+
+// -------  Coding Challenge #2
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+}
+
+const calcTip1 = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;  // different way of saying the same thing
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tips);
+
+const totals = [(bills[0] + tips[0]), (bills[1] + tips[1]), (bills[2] + tips[2])];
+console.log(totals);
+
+
+const anastasiosArray = [
+    "Anastasios",
+    "Tatarakis",
+    "Larentzos",
+    2024 - 1994,
+    ["Georgia", "George", "Antonis", "Stavros"]
+];
+
+const anastasios = {
+    firstName: "Tatarakis",
+    lastName: "Larentzos",
+    age: 2024 - 1994,
+    occupation: "Front-End Developer",
+    friends: ["Georgia", "George", "Antonis", "Stavros"]
+};
+
+
+const anastasios = {
+    firstName: "Tatarakis",
+    lastName: "Larentzos",
+    age: 2024 - 1994,
+    occupation: "Front-End Developer",
+    friends: ["Georgia", "George", "Antonis", "Stavros"]
+};
+
+console.log(anastasios);
+
+console.log(anastasios.lastName);
+console.log(anastasios['lastName']);
+
+const nameKey = "Name";
+console.log(anastasios["first" + nameKey]);
+console.log(anastasios["last" + nameKey]);
+
+const intrestedIN = prompt("What do you want to know about me? Choose between firstName, latName, age, occupation & friends!")
+
+if (anastasios[intrestedIN]) {
+    console.log(anastasios[intrestedIN]);
+} else {
+    console.log("Wrong request!")
+}
+
+anastasios.location = "Greece";
+anastasios['GitHub'] = "Anastasios3";
+console.log(anastasios);
+
+console.log(`${anastasios.firstName} has ${anastasios.friends.length} friends, and his best friend is called ${anastasios.friends[0]}.`);
+*/
+
+const anastasios3 = {
+    firstName: "Anastasios",
+    middleName: "Tatarakis",
+    lastName: "Larentzos",
+    birthYear: 1994,
+    occupation: "Front-End Developer",
+    friends: ["Georgia", "George", "Antonis", "Stavros"],
+    hasDriversLicense: false,
+    /*
+        calcAge: function (birthYear) {
+            return 2024 - birthYear;
+        } */
+    /*
+    calcAge: function () {
+        //console.log(this);
+        return 2024 - this.birthYear;   // this helps you call an information from inside the array in order to make a funktion work
+    } */
+    calcAge: function () {
+        this.age = 2024 - this.birthYear;
+        return 2024 - this.birthYear;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${anastasios3.occupation}, and has ${this.hasDriversLicense ? "a" : "no"} driver's license.`
+    }
+};
+/*
+const calcAge = function (birthYear) {
+    return 2024 - birthYear;
+};
+*/
+console.log(anastasios3.calcAge());
+console.log(anastasios3.calcAge());
+console.log(anastasios3.calcAge());
+
+
+//console.log(anastasios3["calcAge"](1994)); // that is how you get the function from inside of the first array
+/*
+// My Method
+function describePerson(person) {
+    const licenseStatement = person.hasDriversLicense ? "and he has a driver's license" : "and he does not have a driver's license";
+    console.log(`${anastasios3.firstName} is a ${anastasios3.age}-year old ${anastasios3.occupation}, ${licenseStatement}.`);
+}
+
+console.log(describePerson(anastasios3));
+*/
+console.log(anastasios3.getSummary())
